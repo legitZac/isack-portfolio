@@ -7,7 +7,6 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
-  /* transition: all 0.4s linear; */
   list-style: none;
   text-decoration: none;
 }
@@ -23,7 +22,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .nav-bar .home-link {
@@ -35,10 +34,11 @@
 }
 
 .nav-bar .nav-menu {
-  margin: 3rem 0 3rem 0;
+  margin: 2rem 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 2rem; /* Space between navigation items */
 }
 
 .nav-menu .nav-items a {
@@ -51,7 +51,7 @@
 }
 
 .corousel-box {
-  max-width: 60vw;
+  max-width: 60vw; /* Original width */
   position: relative;
   margin: auto;
   overflow: hidden;
@@ -76,19 +76,23 @@
 }
 
 .footer .social-box {
-  margin: 0 0 1rem 0;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  grid-gap: 1rem;
+  gap: 1rem;
 }
 
 .footer .social-box i {
   height: 30px;
   width: 30px;
-  border-radius: 100%;
+  border-radius: 50%;
   background-color: var(--color-Light);
   color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
 }
 
 .footer .foot-note {
@@ -98,7 +102,7 @@
   padding: 2px;
 }
 
-/* --------------------------project page----------------------------------- */
+/* Projects page */
 #project {
   border: 2px solid var(--color-Light);
 }
@@ -106,10 +110,10 @@
 .portfolio-cards {
   position: relative;
   margin: auto;
-  max-width: 50%;
+  max-width: 50%; /* Original size for large screens */
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr); /* Two per row on larger screens */
+  gap: 20px;
 }
 
 .portfolio-cards img {
@@ -117,13 +121,7 @@
   display: block;
 }
 
-.portfolio-cards img:nth-child(1),
-.portfolio-cards img:nth-child(4),
-.portfolio-cards img:nth-child(7) {
-  grid-column: span 2;
-}
-
-/* --------------------------About page-------------------------------------- */
+/* About page */
 #about {
   border: 2px solid var(--color-Light);
 }
@@ -134,6 +132,7 @@
   align-items: center;
   position: relative;
   margin: auto;
+  margin-top: 2rem;
 }
 
 .middle-content .profile-img {
@@ -165,7 +164,7 @@
   margin-top: 3rem;
 }
 
-/*-----------------------------contacts page----------------------------------------*/
+/* Contacts page */
 #contacts {
   border: 2px solid var(--color-Light);
 }
@@ -173,7 +172,7 @@
 .details-form form {
   display: flex;
   flex-direction: column;
-  grid-gap: 2rem;
+  gap: 2rem;
   align-items: center;
   position: relative;
   margin: auto;
@@ -189,7 +188,7 @@
   text-transform: capitalize;
 }
 
-.details-form form input[value="submit"] {
+.details-form form input[type="submit"] {
   font-size: 1.3rem;
   background-color: var(--color-Light);
   color: var(--color-medium);
@@ -197,8 +196,9 @@
   font-weight: 400;
   cursor: pointer;
 }
-/* ----------------------------media screens--------------------------------------- */
-@media (width > 1400px) {
+
+/* Media queries for responsiveness */
+@media (min-width: 1400px) {
   .profile-img img {
     max-width: 25%;
     margin: auto;
@@ -211,15 +211,69 @@
     font-weight: 300;
     padding: 0 45rem;
   }
-}
 
-@media (width < 992px) {
   .portfolio-cards {
-    grid-template-columns: 1fr;
+    max-width: 50%; /* Original size */
   }
 }
 
-/*----------------------------Animations-------------------------------------------*/
+@media (max-width: 992px) {
+  .profile-img img {
+    max-width: 60%;
+    margin: auto;
+  }
+
+  .portfolio-cards {
+    grid-template-columns: 1fr; /* One per row on smaller screens */
+  }
+
+  .nav-bar .home-link {
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-bar .nav-menu {
+    flex-direction: row; /* Keeps navigation items in a row */
+    margin-top: 1rem;
+  }
+
+  .nav-menu .nav-items a {
+    padding: 8px;
+    font-size: 15px;
+  }
+
+  .footer {
+    margin: 3rem 0 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-bar .home-link {
+    font-size: 7vw;
+  }
+
+  .portfolio-cards {
+    max-width: 100%;
+    grid-template-columns: 1fr; /* One per row on very small screens */
+    gap: 10px;
+  }
+
+  .middle-content .about-info p {
+    font-size: 16px;
+    padding: 0 1rem;
+  }
+
+  .corousel-box {
+    max-width: 90vw; /* Adjust for small screens */
+  }
+
+  .nav-bar .nav-menu {
+    flex-direction: row; /* Keeps navigation in row on small screens */
+  }
+}
+
+/* Animations */
 @keyframes scroll {
   0%,
   15.55% {
