@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem; /* Space between navigation items */
+  gap: rem; /* Space between navigation items */
 }
 
 .nav-menu .nav-items a {
