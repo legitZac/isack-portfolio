@@ -123,10 +123,6 @@
 }
 
 .portfolio-cards img {
-  padding: 0 1rem;
-}
-
-.portfolio-cards img {
   max-width: 100%;
   display: block;
 }
@@ -235,6 +231,10 @@
 
   .portfolio-cards {
     grid-template-columns: 1fr; /* One per row on smaller screens */
+  }
+
+  .portfolio-cards img {
+    padding: 0 1rem;
   }
 
   .nav-bar .home-link {
