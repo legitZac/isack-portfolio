@@ -123,6 +123,10 @@
 }
 
 .portfolio-cards img {
+  padding: 0 1rem;
+}
+
+.portfolio-cards img {
   max-width: 100%;
   display: block;
 }
